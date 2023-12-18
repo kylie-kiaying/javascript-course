@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        console.log('hello'.length);
+        console.log('hello'.toUpperCase()); 
+
+        //Objects are references
+        const object1 = {
+            message: 'hello'
+        };
+        const object2 = object1; //Makes a copy of the reference, not the object itself
+        object1.message = 'goodbye';
+        console.log(object1);
+        console.log(object2); //Also changed to goodbye
+
+        const object3 = {
+            message: 'goodbye'
+        }
+        console.log(object3 === object1); //False, because they are different objects, with different references
+        console.log(object2 === object1); //True, they have the same reference
+
+        const object4 = {
+            message: 'hello',
+            price: 799
+        };
+        // const message = object4.message;
+        const { message, price } = object4; //Same as above
+        console.log(message);
+        console.log(price);
+
+        const object5 = {
+            //message: message
+            message, //Same as above
+            // method: function function1() {
+            //     console.log('method');
+            // },
+            method2() { //Same as above
+                console.log('method2');
+            }
+        };
+        console.log(object5); //Prints hello 
+        object5.method(); //Prints method
+    </script>
+    
+</body>
+</html>
